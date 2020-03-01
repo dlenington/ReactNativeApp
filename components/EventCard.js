@@ -15,8 +15,7 @@ const EventCard = () => {
       </Card.Content>
       <Card.Cover
         source={{
-          uri:
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutupandtakemymoney.com%2Ftrump-orange-face-meme-fence-spray-paint%2F&psig=AOvVaw2YXGLe2mkvE23iz8eAVGC1&ust=1583119818603000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjo5YWr-OcCFQAAAAAdAAAAABAD"
+          uri: "https://picsum.photos/700"
         }}
       />
       <Card.Actions>

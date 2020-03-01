@@ -11,7 +11,7 @@ import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 const theme = {
   ...DefaultTheme,
   colors: {
-    primary: "tomato",
+    primary: "#81d4fa",
     accent: "yellow"
   }
 };
@@ -19,10 +19,8 @@ const theme = {
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <View style={styles.container}>
-        <NavBar />
-        <EventCard />
-      </View>
+      <NavBar />
+      <EventCard />
     </PaperProvider>
   );
 }
