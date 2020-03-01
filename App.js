@@ -1,12 +1,29 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+
+//Components
 import NavBar from "./components/NavBar";
+import EventCard from "./components/EventCard";
+
+//Paper Stuff
+import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    primary: "tomato",
+    accent: "yellow"
+  }
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <NavBar />
-    </View>
+    <PaperProvider theme={theme}>
+      <View style={styles.container}>
+        <NavBar />
+        <EventCard />
+      </View>
+    </PaperProvider>
   );
 }
 
