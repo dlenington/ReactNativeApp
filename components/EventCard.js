@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
 
-const EventCard = () => {
+const EventCard = props => {
+  const title = { props };
   return (
     <Card>
       <Card.Title
-        title="Card Title"
+        title="hello"
         subtitle="Card Subtitle"
         left={props => <Avatar.Icon {...props} icon="folder" />}
       />
       <Card.Content>
-        <Title>Hello Dadio</Title>
+        <Title>hello</Title>
         <Paragraph>Card content</Paragraph>
       </Card.Content>
       <Card.Cover

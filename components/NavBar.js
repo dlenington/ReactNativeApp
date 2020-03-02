@@ -1,35 +1,42 @@
 import React, { Component } from "react";
 
-import { Appbar } from "react-native-paper";
-import { StyleSheet } from "react-native";
+import { BottomNavigation, Text } from "react-native-paper";
 
-const NavBar = () => {
-  return (
-    <Appbar style={styles.bottom}>
-      <Appbar.Action
-        icon="archive"
-        onPress={() => console.log("Pressed archive")}
-      />
-      <Appbar.Action icon="mail" onPress={() => console.log("Pressed mail")} />
-      <Appbar.Action
-        icon="label"
-        onPress={() => console.log("Pressed label")}
-      />
-      <Appbar.Action
-        icon="delete"
-        onPress={() => console.log("Pressed delete")}
-      />
-    </Appbar>
-  );
-};
+import EventCard from "./EventCard";
 
-const styles = StyleSheet.create({
-  bottom: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    bottom: 0
+const HomeRoute = () => <EventCard title="Home" />;
+
+const FavoritesRoute = () => <EventCard title="Favorites" />;
+
+const ProfileRoute = () => <EventCard title="Profile" />;
+
+class NavBar extends Component {
+  state = {
+    index: 0,
+    routes: [
+      { key: "home", title: "Home", icon: "home" },
+      { key: "favorites", title: "Favorites", icon: "favorites" },
+      { key: "profile", title: "Profile", icon: "profile" }
+    ]
+  };
+
+  _handleIndexChange = index => this.setState({ index });
+
+  _renderScene = BottomNavigation.SceneMap({
+    home: HomeRoute,
+    favorites: FavoritesRoute,
+    profile: ProfileRoute
+  });
+
+  render() {
+    return (
+      <BottomNavigation
+        navigationState={this.state}
+        onIndexChange={this._handleIndexChange}
+        renderScene={this._renderScene}
+      />
+    );
   }
-});
+}
 
 export default NavBar;

@@ -20,7 +20,6 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <NavBar />
-      <EventCard />
     </PaperProvider>
   );
 }
